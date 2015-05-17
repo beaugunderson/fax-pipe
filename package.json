@@ -1,0 +1,33 @@
+{
+  "name": "fax-pipe",
+  "version": "1.0.0",
+  "description": "Pipe files via fax",
+  "main": "fax-pipe.js",
+  "bin": {
+    "fax-pipe": "fax-pipe.js"
+  },
+  "dependencies": {
+    "commander": "^2.8.1",
+    "concat-stream": "^1.4.8",
+    "phaxio-api": "^1.0.0",
+    "streamifier": "^0.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Beau Gunderson <beau@beaugunderson.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beaugunderson/fax-pipe.git"
+  },
+  "keywords": [
+    "fax",
+    "pipe"
+  ],
+  "bugs": {
+    "url": "https://github.com/beaugunderson/fax-pipe/issues"
+  },
+  "homepage": "https://github.com/beaugunderson/fax-pipe#readme"
+}
