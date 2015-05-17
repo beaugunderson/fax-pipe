@@ -3,6 +3,7 @@
 'use strict';
 
 var concat = require('concat-stream');
+var fileType = require('file-type');
 var PhaxioAPI = require('phaxio-api');
 var streamifier = require('streamifier');
 
@@ -39,10 +40,12 @@ var phaxio = new PhaxioAPI({
 });
 
 process.stdin.pipe(concat(function (buffer) {
-  // TODO: use the non-stream API to avoid this silliness?
+  var type = fileType(buffer) || {ext: 'txt', mime: 'text/plain'};
+
   phaxio.send(program.phoneNumber, {
     stream: streamifier.createReadStream(buffer),
-    filename: 'file.pdf',
+    contentType: type.mime,
+    filename: 'file.' + type.ext,
     knownLength: buffer.length
   }).then(function (response) {
     console.log('phaxio response', response);
